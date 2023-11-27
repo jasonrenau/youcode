@@ -2,7 +2,7 @@
 import { SiteConfig } from "@/lib/site-config";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { Typography } from "../ui/Typography";
+import { Typography } from "../ui/typography";
 import Image from "next/image";
 
 export function Header() {
