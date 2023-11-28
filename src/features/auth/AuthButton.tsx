@@ -1,6 +1,7 @@
 import { getAuthSession } from "@/lib/auth";
 import { LoginButton } from "./LoginButton";
 import { LoggedInButton } from "./LoggedInButton";
+import { Computer } from "lucide-react";
 
 export type AuthButtonProps = {};
 
