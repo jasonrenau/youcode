@@ -20,7 +20,7 @@ export function Header() {
             <Typography variant="h3" as={Link} href="/">
               {SiteConfig.title}
             </Typography>
-            <div className="flex flex-1 justify-center">
+            <div className="flex items-baseline gap-2">
               <Typography
                 as={Link}
                 variant={"link"}
@@ -28,6 +28,14 @@ export function Header() {
                 href={"/explorer"}
               >
                 Explorer
+              </Typography>
+              <Typography
+                as={Link}
+                variant={"link"}
+                className="text-muted-foreground hover:text-foreground"
+                href={"/courses"}
+              >
+                Courses
               </Typography>
             </div>
           </div>
