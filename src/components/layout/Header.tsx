@@ -16,11 +16,22 @@ export function Header() {
             height={"35"}
             alt="app logo"
           />
-          <Typography variant="h3" as={Link} href="/">
-            {SiteConfig.title}
-          </Typography>
+          <div className="flex items-baseline gap-2">
+            <Typography variant="h3" as={Link} href="/">
+              {SiteConfig.title}
+            </Typography>
+            <div className="flex flex-1 justify-center">
+              <Typography
+                as={Link}
+                variant={"link"}
+                className="text-muted-foreground hover:text-foreground"
+                href={"/explorer"}
+              >
+                Explorer
+              </Typography>
+            </div>
+          </div>
         </div>
-
         <div className="flex flex-1 items-center justify-end space-x-4">
           <nav className="flex items-center space-x-1">
             <AuthButton />
