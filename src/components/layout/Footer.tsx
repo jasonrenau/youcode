@@ -15,7 +15,12 @@ export const Footer = () => {
               height={30}
               alt="app logo"
             />
-            <Typography variant="base" as={Link} href="/">
+            <Typography
+              variant="base"
+              as={Link}
+              href="/"
+              className="text-white"
+            >
               {SiteConfig.title}
             </Typography>
           </div>

@@ -11,16 +11,14 @@ import { Toaster } from "sonner";
 export const Providers = ({ children }: PropsWithChildren) => {
   const queryClient = new QueryClient();
   return (
-    <>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <Toaster />
-        <SessionProvider>
-          <QueryClientProvider client={queryClient}>
-            {children}
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
-        </SessionProvider>
-      </ThemeProvider>
-    </>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <SessionProvider>
+        <QueryClientProvider client={queryClient}>
+          <Toaster />
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </SessionProvider>
+    </ThemeProvider>
   );
 };

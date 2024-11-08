@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <html lang="en" className="h-full" suppressHydrationWarning>
+      <html lang="fr" className="h-full" suppressHydrationWarning>
         <head />
         <body
           className={cn(
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           <Providers>
             <div className="relative flex min-h-screen flex-col">
               <Header />
-              <div className="flex-1">{children}</div>
+              <main className="flex-1">{children}</main>
               <Footer />
             </div>
             <TailwindIndicator />

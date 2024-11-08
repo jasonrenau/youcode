@@ -1,14 +1,21 @@
 // src/components/layout/Header.
+import { Typography } from "@/components/ui/Typography";
+import { ThemeToggle } from "@/components/utils/ThemeToggle";
 import { SiteConfig } from "@/lib/site-config";
+import Image from "next/image";
 import Link from "next/link";
-import { Typography } from "../ui/Typography";
-import { ThemeToggle } from "../utils/ThemeToggle";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background">
+    <header className="sticky top-0 z-40 w-full border-b bg-background p-2">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex gap-6 md:gap-10">
+        <div className="flex gap-2 md:gap-10">
+          <Image
+            src="/images/you-code.svg"
+            width={50}
+            height={35}
+            alt="app logo"
+          />
           <Typography variant="h3" as={Link} href="/">
             {SiteConfig.title}
           </Typography>
