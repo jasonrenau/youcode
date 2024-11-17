@@ -13,11 +13,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   callbacks: {
-    session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id;
-        session.user.image = user.image;
-      }
+    // Ajoute l'ID de l'utilisateur à l'objet session
+    async session({ session, user }) {
+      session.user.id = user.id;
       return session;
     },
   },

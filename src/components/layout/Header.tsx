@@ -4,8 +4,9 @@ import { ThemeToggle } from "@/components/utils/ThemeToggle";
 import { SiteConfig } from "@/lib/site-config";
 import Image from "next/image";
 import Link from "next/link";
+import { AuthButton } from "../features/auth/AuthButton";
 
-export function Header() {
+export const Header = () => {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background p-2">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -22,6 +23,7 @@ export function Header() {
         </div>
 
         <div className="flex flex-1 items-center justify-end space-x-4">
+          <AuthButton />
           <nav className="flex items-center space-x-1">
             <ThemeToggle />
           </nav>
@@ -29,4 +31,4 @@ export function Header() {
       </div>
     </header>
   );
-}
+};
