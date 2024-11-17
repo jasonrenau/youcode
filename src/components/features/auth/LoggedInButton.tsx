@@ -66,14 +66,11 @@ export const LoggedInButton = ({ user }: { user: Session["user"] }) => {
 
             <Button
               variant="destructive"
+              size={"sm"}
               disabled={mutation.isPending}
               onClick={() => mutation.mutate()}
             >
-              {mutation.isPending ? (
-                <Loader size={"sm"} />
-              ) : (
-                <LogOut size={"sm"} />
-              )}
+              {mutation.isPending ? <Loader size={12} /> : <LogOut size={12} />}
               Se déconnecter
             </Button>
           </AlertDialogFooter>
