@@ -1,6 +1,6 @@
 import { Card, CardHeader } from "@/components/ui/card";
 
-export default async function Home() {
+export default function Home() {
   return (
     <main>
       <Card>
