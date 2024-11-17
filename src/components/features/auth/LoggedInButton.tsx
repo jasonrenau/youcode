@@ -4,6 +4,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -21,9 +22,10 @@ import {
   AlertDialogTitle,
 } from "@radix-ui/react-alert-dialog";
 import { useMutation } from "@tanstack/react-query";
-import { LogOut } from "lucide-react";
+import { LogOut, User2 } from "lucide-react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
+import Link from "next/link";
 
 export const LoggedInButton = ({ user }: { user: Session["user"] }) => {
   const mutation = useMutation({
@@ -46,8 +48,18 @@ export const LoggedInButton = ({ user }: { user: Session["user"] }) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
+          <DropdownMenuItem asChild>
+            <Link href="/account">
+              <User2 size={12} />
+              Mon compte
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
           <AlertDialogTrigger asChild>
-            <DropdownMenuItem>Déconnexion</DropdownMenuItem>
+            <DropdownMenuItem>
+              <LogOut size={12} />
+              Déconnexion
+            </DropdownMenuItem>
           </AlertDialogTrigger>
         </DropdownMenuContent>
         <AlertDialogContent>
@@ -66,14 +78,11 @@ export const LoggedInButton = ({ user }: { user: Session["user"] }) => {
 
             <Button
               variant="destructive"
+              size={"sm"}
               disabled={mutation.isPending}
               onClick={() => mutation.mutate()}
             >
-              {mutation.isPending ? (
-                <Loader size={"sm"} />
-              ) : (
-                <LogOut size={"sm"} />
-              )}
+              {mutation.isPending ? <Loader size={12} /> : <LogOut size={12} />}
               Se déconnecter
             </Button>
           </AlertDialogFooter>

@@ -1,9 +1,26 @@
-import { useSession } from "next-auth/react";
+import { User } from "@prisma/client";
+import { baseAuth } from "./auth";
 
-export const GetAuthUser = () => {
-  const session = useSession();
+export class AuthError extends Error {}
 
-  if (!session.data?.user) throw new Error("No session found");
+export const auth = async () => {
+  const session = await baseAuth();
+  if (session?.user) {
+    const user = session.user as User;
+    return user;
+  }
 
-  return session.data.user;
+  return null;
+};
+
+export const requiredAuth = async () => {
+  const user = await auth();
+
+  if (!user) {
+    throw new AuthError(
+      "Tu a besoin d'être connecté pour accéder à cette page"
+    );
+  }
+
+  return user;
 };
