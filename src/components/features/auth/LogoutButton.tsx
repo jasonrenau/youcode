@@ -5,14 +5,10 @@ import { Loader } from "@/components/ui/loader";
 import { useMutation } from "@tanstack/react-query";
 import { LogOut } from "lucide-react";
 import { signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 export default function LogoutButton() {
-  const router = useRouter();
-
   const mutation = useMutation({
     mutationFn: async () => {
-      router.push("/");
       await signOut();
     },
   });
