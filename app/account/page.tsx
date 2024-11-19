@@ -32,13 +32,13 @@ export default async function AccountPage() {
       <CardContent className="flex flex-col gap-4">
         <Link
           className={buttonVariants({ variant: "outline", size: "lg" })}
-          href={"/account/settings"}
+          href={"/settings"}
         >
           Paramètres
         </Link>
         <Link
           className={buttonVariants({ variant: "outline", size: "lg" })}
-          href={"/account/admin"}
+          href={"/admin"}
         >
           Administrateur
         </Link>
