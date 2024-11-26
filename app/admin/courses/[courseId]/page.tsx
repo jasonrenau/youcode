@@ -130,9 +130,9 @@ export default async function CoursePage({
                 variant: "outline",
                 size: "sm",
               })}
-              href={`/admin/courses/${courseId}/editLessons`}
+              href={`/admin/courses/${courseId}/lessons`}
             >
-              Modifier les cours
+              Modifier les leçons
             </Link>
           </CardContent>
         </Card>
