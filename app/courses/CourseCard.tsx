@@ -10,7 +10,7 @@ export type CourseCardProps = {
 
 export const CourseCard = (props: CourseCardProps) => {
   return (
-    <Link href={`courses/course/${props.course.id}`}>
+    <Link href={`/courses/${props.course.id}`}>
       <Card className="hover:bg-accent">
         <CardHeader className="flex flex-row gap-3 space-y-0">
           <Avatar className="size-14 rounded">

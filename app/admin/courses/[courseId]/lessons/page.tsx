@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { requiredAuth } from "@/lib/helper";
 
 import { notFound } from "next/navigation";
-import { LessonItem } from "./LessonItem";
+import { AdminLessonItem } from "./AdmlinLessonItem";
 import { getAdminLessons } from "./lessons.query";
 
 export default async function CourseLessonsPage({
@@ -40,7 +40,7 @@ export default async function CourseLessonsPage({
           </CardHeader>
           <CardContent className="flex flex-col gap-2">
             {course.lessons.map((lesson) => (
-              <LessonItem key={lesson.id} lessons={lesson} />
+              <AdminLessonItem key={lesson.id} lessons={lesson} />
             ))}
           </CardContent>
         </Card>

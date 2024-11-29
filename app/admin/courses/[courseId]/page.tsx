@@ -19,7 +19,7 @@ import {
 import { Typography } from "@/components/ui/Typography";
 import { requiredAuth } from "@/lib/helper";
 import Link from "next/link";
-import { getAdminCourse } from "./course.query";
+import { getAdminCourse } from "./admin-course.query";
 
 export default async function CoursePage({
   params,
