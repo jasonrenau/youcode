@@ -11,7 +11,7 @@ export type PaginationButtonProps = {
 
 export const PaginationButton = (props: PaginationButtonProps) => {
   const router = useRouter();
-  console.log(props.totalPage, props.page);
+
   return (
     <div className=" flex  gap-2">
       <Button
