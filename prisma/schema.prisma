@@ -94,7 +94,7 @@ model Lesson {
   createdAt DateTime       @default(now())
   courseId  String
   course    Course         @relation(fields: [courseId], references: [id])
-  user      LessonOnUser[]
+  users      LessonOnUser[]
 }
 
 model LessonOnUser {

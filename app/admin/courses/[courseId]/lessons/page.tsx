@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { requiredAuth } from "@/lib/helper";
 
 import { notFound } from "next/navigation";
-import { AdminLessonItem } from "./AdmlinLessonItem";
+import { AdminLessonItem } from "./AdminLessonItem";
 import { getAdminLessons } from "./lessons.query";
 
 export default async function CourseLessonsPage({
